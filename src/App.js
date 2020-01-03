@@ -8,7 +8,7 @@ import HashingPage from './pages/hashingPage';
 export default function App() {
     return (
         <Switch>
-            <Route path={home}>
+            <Route exact path={home}>
                 <HomePage />
             </Route>
             <Route path={encryption}>
