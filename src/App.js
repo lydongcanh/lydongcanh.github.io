@@ -11,18 +11,18 @@ import neumorphismStyle from './data/neumorphismStyle';
 const { Content } = Layout;
 
 export default function App() {
-    const contentStyle = neumorphismStyle({style: {
-        padding: "15px",
-        margin: "5px 15px 15px 15px",
-        backgroundStartColor: "rgba(0, 0, 0, .03)",
-        backgroundEndColor: "rgba(0, 0, 0, .03)",
-    }});
+    // const contentStyle = neumorphismStyle({style: {
+    //     padding: "15px",
+    //     margin: "5px 15px 15px 15px",
+    //     backgroundStartColor: "rgba(0, 0, 0, .03)",
+    //     backgroundEndColor: "rgba(0, 0, 0, .03)",
+    // }});
 
     return (
         <Switch>
-            <Layout style={{height: "100vh"}}>
+            <Layout style={{backgroundColor: "white"}}>
                 <Navbar />
-                <Content style={contentStyle}>
+                <Content style={{margin: "15px"}}>
                     <Route exact path={home}>
                         <HomePage />
                     </Route>
