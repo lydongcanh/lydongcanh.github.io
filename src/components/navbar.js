@@ -1,16 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { Menu, Icon } from "antd";
 import { Link } from "react-router-dom";
 import { home, encryption, hashing } from "../data/urls";
+import neumorphismStyle from "../data/neumorphismStyle";
 
-/**
- * 
- * @param {*} props defaultSelectedKeys[home, encryption, hashing]
- */
-export default function Navbar(props) {
+export default function Navbar() {
+    const [selectedKey, setSelectedKey] = useState("home");
+    const style = neumorphismStyle({style: {
+        margin: "15px",
+        padding: "5px"
+    }});
+
+    function handleOnSelect(e) {
+        setSelectedKey(e.key);
+    }
+
     return (
         <Menu 
-            defaultSelectedKeys={props.defaultSelectedKeys}
+            onSelect={handleOnSelect}
+            style={style}
+            selectedKeys={selectedKey}
             mode="horizontal"
         >
             <Menu.Item key="home">
