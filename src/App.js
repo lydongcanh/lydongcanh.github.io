@@ -2,11 +2,11 @@ import React from 'react';
 import { Layout } from "antd";
 import { Switch, Route } from "react-router-dom";
 import HomePage from './pages/homePage';
-import { home, encryption, hashing } from "./data/urls";
+import { home, encryption, hashing, gameOfLife } from "./data/urls";
 import EncryptionPage from './pages/encryptionPage';
 import HashingPage from './pages/hashingPage';
 import Navbar from './components/navbar';
-import neumorphismStyle from './data/neumorphismStyle';
+import GameOfLifePage from './pages/gameOfLifePage';
 
 const { Content } = Layout;
 
@@ -31,6 +31,9 @@ export default function App() {
                     </Route>
                     <Route path={hashing}>
                         <HashingPage />
+                    </Route>
+                    <Route path={gameOfLife}>
+                        <GameOfLifePage />
                     </Route>
                 </Content>
             </Layout>

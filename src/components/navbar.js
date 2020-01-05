@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Menu, Icon } from "antd";
 import { Link } from "react-router-dom";
-import { home, encryption, hashing } from "../data/urls";
-import neumorphismStyle from "../data/neumorphismStyle";
+import { home, encryption, hashing, gameOfLife } from "../data/urls";
 
 export default function Navbar() {
     const [selectedKey, setSelectedKey] = useState("home");
@@ -41,6 +40,12 @@ export default function Navbar() {
                 <Link to={hashing}>
                     <Icon type="barcode" />
                     Hashing
+                </Link>
+            </Menu.Item>
+            <Menu.Item key="gameOfLife">
+                <Link to={gameOfLife}>
+                    <Icon type="robot" />
+                    Game Of Life
                 </Link>
             </Menu.Item>
         </Menu>
