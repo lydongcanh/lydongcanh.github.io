@@ -4,6 +4,7 @@ import App from './app';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from 'react-router-dom';
 import "antd/dist/antd.css";
+import '../node_modules/react-vis/dist/style.css';
 
 ReactDOM.render(
     <BrowserRouter>

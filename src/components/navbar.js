@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Menu, Icon } from "antd";
 import { Link } from "react-router-dom";
-import { home, encryption, hashing, gameOfLife } from "../data/urls";
+import { home, encryption, hashing, gameOfLife, machineLearning } from "../data/urls";
 
 export default function Navbar() {
     const [selectedKey, setSelectedKey] = useState("home");
@@ -30,21 +30,27 @@ export default function Navbar() {
                     Home
                 </Link>
             </Menu.Item>
+            <Menu.Item key="machineLearning">
+                <Link to={machineLearning}>
+                    <Icon type="robot" />
+                    Machine Learning
+                </Link>
+            </Menu.Item>
             <Menu.Item key="encryption" >
                 <Link to={encryption}>
-                    <Icon type="alert" />
+                    <Icon type="lock" />
                     Encryption
                 </Link>
             </Menu.Item>
             <Menu.Item key="hashing">
                 <Link to={hashing}>
-                    <Icon type="barcode" />
+                    <Icon type="scissor" />
                     Hashing
                 </Link>
             </Menu.Item>
             <Menu.Item key="gameOfLife">
                 <Link to={gameOfLife}>
-                    <Icon type="robot" />
+                    <Icon type="experiment" />
                     Game Of Life
                 </Link>
             </Menu.Item>

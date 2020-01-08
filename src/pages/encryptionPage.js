@@ -6,10 +6,6 @@ const { TabPane } = Tabs;
 const { TextArea } = Input;
 
 export default function EncryptionPage() {
-    let encrypted = CryptoJS.AES.encrypt("Message", "Secret Passphrase");
-    let decrypted = CryptoJS.AES.decrypt(encrypted, "Secret Passphrase");
-    
-    console.log({e: encrypted, d: decrypted.toString(CryptoJS.enc.Hex)});
 
     const [algorithm, setAlgorithm] = useState("AES");
     const [mode, setMode] = useState("encrypt");
@@ -23,28 +19,29 @@ export default function EncryptionPage() {
                 <Radio.Button value="encrypt">Encryption</Radio.Button>
                 <Radio.Button value="decrypt">Decryption</Radio.Button>
             </Radio.Group>
+
             <Divider mode="horizontal" />
-            <TextArea 
+            <TextArea
                 allowClear
                 onChange={handlePassphraseChange}
                 value={passphrase}
-                autoSize={{minRows: 2, maxRows: 5}} 
+                autoSize={{ minRows: 2, maxRows: 5 }}
                 placeholder="Secret passphrase."
             />
             <Divider mode="horizontal" />
-            <TextArea 
+            <TextArea
                 allowClear
                 disabled={!passphrase || passphrase.length < 1}
-                onChange={handleInputValueChange} 
-                autoSize={{minRows: 8, maxRows: 10}} 
-                value={inputValue} 
-                placeholder="Input message." 
+                onChange={handleInputValueChange}
+                autoSize={{ minRows: 8, maxRows: 10 }}
+                value={inputValue}
+                placeholder="Input message."
             />
             <Divider mode="horizontal" />
-            <TextArea 
+            <TextArea
                 disabled
-                autoSize={{minRows: 8, maxRows: 10}} 
-                value={outputValue} 
+                autoSize={{ minRows: 8, maxRows: 10 }}
+                value={outputValue}
                 placeholder="Output message."
             />
         </div>

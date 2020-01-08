@@ -7,8 +7,8 @@ export default function GameOfLifePage() {
     const [numCols, setNumCols] = useState(35);
     const [speed, setSpeed] = useState(50);
     const [isPlaying, setIsPlaying] = useState(false);
-    const [birthRate, setBirthRate] = useState(50);
-    const [deathRate, setDeathRate] = useState(50);
+    const [birthRate, setBirthRate] = useState(25);
+    const [deathRate, setDeathRate] = useState(10);
     const [liveCount, setLiveCount] = useState(0);
 
     const sliderStyle = {
@@ -19,10 +19,11 @@ export default function GameOfLifePage() {
     const inputNumberStyle = {
         padding: 0,
         margin: "10px 0 0 0",
-        left: "5px"
+        left: "5px",
+        width: 100
     }
 
-    const populationProgressPercent = (liveCount / (numRows * numCols) * 100).toFixed(2);
+    const populationProgressPercent = (liveCount / (numRows * numCols) * 100);
 
     function handlePlayButtonClick() {
         setIsPlaying(!isPlaying);
@@ -30,7 +31,7 @@ export default function GameOfLifePage() {
 
     return (
         <div>
-            <Row gutter={{ xs: 8, sm: 8, md: 16, lg: 16 }}>
+            <Row gutter={{ xs: 0, sm: 8, md: 16, lg: 16 }}>
                 <Col span={3}>
                     Rows:
                     <InputNumber style={inputNumberStyle} defaultValue={1} step={1} min={1} max={100} 
@@ -58,7 +59,7 @@ export default function GameOfLifePage() {
                 </Col>
                 <Col span={3}>
                     Live cells: {liveCount}
-                    <Progress percent={populationProgressPercent} />
+                    <Progress status="active" format={percent => percent.toFixed(2) + "%"} percent={populationProgressPercent} />
                 </Col>
                 <Col span={6}>
                     <Button
