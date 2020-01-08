@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button, Divider, Table, Drawer, Tag, InputNumber, Slider, Icon } from "antd";
 import * as tf from "@tensorflow/tfjs";
 import produce from "immer";
@@ -16,10 +16,10 @@ export default function LinearRegressionTab() {
     const [inputX, setInputX] = useState(0);
     const [inputY, setInputY] = useState(0);
     const [xValues, setXValues] = useState(
-        [0.03, 0.08, 0.17, 0.31, 0.39, 0.47, 0.61, 0.67, 0.81, 0.91, 0.98]
+        [-0.98, -0.79, -0.59, -0.33, 0.03, -0.28, 0.17, 0.31, 0.39, 0.47, 0.61, 0.67, 0.81, 0.91, 0.98]
     );
     const [yValues, setYValues] = useState(
-        [0.02, 0.11, 0.21, 0.28, 0.36, 0.51, 0.61, 0.7, 0.79, 0.95, 0.96]
+        [-0.99, -0.81, -0.69, -0.34, 0.02, -0.21, 0.21, 0.28, 0.36, 0.51, 0.61, 0.7, 0.79, 0.95, 0.96]
     );
     const [slopeValue, setSlopeValue] = useState(0);
     const [yInterceptValue, setYInterceptValue] = useState(0);
@@ -48,6 +48,14 @@ export default function LinearRegressionTab() {
         }
         return result;
     }
+
+    useEffect(() => {
+
+        return function cleanup() {
+            slope.dispose();
+            yIntercept.dispose();
+        }
+    }, [slope, yIntercept]);
 
     useInterval(train, trainInterval);
 
@@ -86,15 +94,13 @@ export default function LinearRegressionTab() {
                     setError(error.dataSync()[0]);
                     return error;
                 }, false, [slope, yIntercept]);
-                
+
                 const newSlope = slope.dataSync()[0];
                 const newYIntercept = yIntercept.dataSync()[0];
 
                 setSlopeValue(newSlope);
                 setYInterceptValue(newYIntercept);
             });
-
-            console.log("tensor: " + tf.memory().numTensors);
         }
     }
 
@@ -128,7 +134,7 @@ export default function LinearRegressionTab() {
         if (xValues.length < 1 || yValues.length < 1)
             return [{ x: 0, y: 0 }, { x: 0, y: 0 }];
 
-        const predictRange = [0, 1];
+        const predictRange = [-1, 1];
         const predictedResult = predict(predictRange);
         const predictedValues = predictedResult.dataSync();
         predictedResult.dispose();
@@ -151,12 +157,15 @@ export default function LinearRegressionTab() {
 
     const chart = (
         <div style={{ height: chartHeight }}>
-            <FlexibleXYPlot>
+            <FlexibleXYPlot
+                xDomain={[-1, 1]}
+                yDomain={[-1, 1]}
+            >
                 <VerticalGridLines />
-                <HorizontalGridLines />
+                <HorizontalGridLines />  
                 <XAxis />
                 <YAxis />
-                <MarkSeries  data={markSeriesData()} />
+                <MarkSeries data={markSeriesData()} />
                 <LineSeries data={lineSeriesData()} />
             </FlexibleXYPlot>
         </div>
@@ -164,9 +173,9 @@ export default function LinearRegressionTab() {
 
     const settingPanel = (
         <div>
-            X: <InputNumber step={0.1} min={0} max={1} value={inputX} onChange={value => setInputX(value)} />
+            X: <InputNumber step={0.1} min={-1} max={1} value={inputX} onChange={value => setInputX(value)} />
             <Divider type="vertical" />
-            Y: <InputNumber step={0.1} min={0} max={1} value={inputY} onChange={value => setInputY(value)} />
+            Y: <InputNumber step={0.1} min={-1} max={1} value={inputY} onChange={value => setInputY(value)} />
             <Divider type="vertical" />
             <Button type="primary" onClick={() => addNewTrainValues(inputX, inputY)}>
                 Add Data
