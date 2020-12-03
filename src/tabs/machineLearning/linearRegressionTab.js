@@ -6,7 +6,6 @@ import { FlexibleXYPlot, VerticalGridLines, HorizontalGridLines, LineSeries, XAx
 import { useInterval } from "../../data/useInterval";
 
 /** y = ax + b. 
- * height = a * weight + b.
 */
 export default function LinearRegressionTab() {
     const [learningRate, setLearningRate] = useState(0.1);
@@ -50,7 +49,6 @@ export default function LinearRegressionTab() {
     }
 
     useEffect(() => {
-
         return function cleanup() {
             slope.dispose();
             yIntercept.dispose();
@@ -157,10 +155,7 @@ export default function LinearRegressionTab() {
 
     const chart = (
         <div style={{ height: chartHeight }}>
-            <FlexibleXYPlot
-                xDomain={[-1, 1]}
-                yDomain={[-1, 1]}
-            >
+            <FlexibleXYPlot>
                 <VerticalGridLines />
                 <HorizontalGridLines />  
                 <XAxis />

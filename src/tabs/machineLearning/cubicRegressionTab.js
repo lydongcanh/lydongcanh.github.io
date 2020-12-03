@@ -214,9 +214,7 @@ export default function CubicRegressionTab() {
 
     return (
         <div>
-            <p><b>SlopeA:</b> {slopeAValue} | 
-            <b>SlopeB:</b> {slopeBValue} |
-            <b>SlopeC:</b> {slopeCValue} </p>
+            <p><b>SlopeA:</b> {slopeAValue} | <b>SlopeB:</b> {slopeBValue} | <b>SlopeC:</b> {slopeCValue} </p>
             <p><b>Y intercept:</b> {yInterceptValue}</p>
             <p><b>Error:</b> {error}</p>
             <p><b>Learning Rate:</b> {(learningRate * 100).toFixed(2)}%</p>

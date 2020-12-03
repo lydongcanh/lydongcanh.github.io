@@ -1,9 +1,9 @@
 import React from "react";
 import { Tabs } from "antd";
 import LinearRegressionTab from "../tabs/machineLearning/linearRegressionTab";
-import UpdateLaterPanel from "../components/updateLaterPanel";
 import QuadraticRegressionTab from "../tabs/machineLearning/quadraticRegressionTab";
 import CubicRegressionTab from "../tabs/machineLearning/cubicRegressionTab";
+import KMeansClustering from "../tabs/machineLearning/kmeansClusteringTab";
 
 const { TabPane } = Tabs;
 
@@ -20,7 +20,7 @@ export default function MachineLearning() {
                 <CubicRegressionTab />
             </TabPane>
             <TabPane tab="K-means Clustering" key="3">
-                <UpdateLaterPanel />
+                <KMeansClustering />
             </TabPane>
         </Tabs>
     );

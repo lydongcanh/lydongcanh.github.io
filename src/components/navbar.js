@@ -5,10 +5,6 @@ import { home, encryption, hashing, gameOfLife, machineLearning } from "../data/
 
 export default function Navbar() {
     const [selectedKey, setSelectedKey] = useState("home");
-    // const style = neumorphismStyle({style: {
-    //     margin: "15px",
-    //     padding: "5px"
-    // }});
 
     function handleOnSelect(e) {
         setSelectedKey(e.key);

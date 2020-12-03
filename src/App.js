@@ -12,12 +12,6 @@ import MachineLearning from './pages/machineLearningPage';
 const { Content } = Layout;
 
 export default function App() {
-    // const contentStyle = neumorphismStyle({style: {
-    //     padding: "15px",
-    //     margin: "5px 15px 15px 15px",
-    //     backgroundStartColor: "rgba(0, 0, 0, .03)",
-    //     backgroundEndColor: "rgba(0, 0, 0, .03)",
-    // }});
 
     return (
         <Switch>
