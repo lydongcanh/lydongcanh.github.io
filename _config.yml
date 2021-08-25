@@ -1,48 +1,28 @@
 # Site Settings
-name: Jekflix
-title: Jekflix | A blog theme for Jekyll
-description: Jekflix is a template for Jekyll inspired by Netflix and made by
-  Thiago Rossener.
+name: Lý Đông Cảnh (Edward)'s Blogs
+title: Lý Đông Cảnh (Edward)'s Blogs
+description: Lý Đông Cảnh (Edward)'s Blogs. Lý Đông Cảnh. Blogs
 tags:
   - blog
-  - template
-  - jekyll
-  - theme
-  - netlify
 show_hero: true
 menu:
   - title: Home
     url: /
   - title: About
     url: /about
-  - title: Contact
-    url: /contact
-  - title: Feed
-    url: /feed.xml
-email: youremail@test.com
-# See: https://disqus.com/
-disqus_username: disqus_username
-# Contact Form Setting
-# See: https://formspree.io/
-formspree_form_id: formspree_form_id
-
+email: lydongcanh@gmail.com
 
 # Social Media Settings
-# Remove the item if you don't need it
-github_username: github_username
-facebook_username: facebook_username
-twitter_username: twitter_username
-instagram_username: instagram_username
-linkedin_username: linkedin_username
-medium_username: medium_username
-
+github_username: lydongcanh
+facebook_username: lydongcanh
+instagram_username: lydongcanh
+linkedin_username: lydongcanh
 
 # Posts Settings
 show_time_bar: true
 show_modal_on_exit: false
 show_modal_on_finish_post: true
 two_columns_layout: true
-
 
 # Advanced Settings
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -51,7 +31,6 @@ google_analytics: "UA-XXXXXXXX-X"
 language: "en"
 categories_folder: category
 sent_message_url: "/contact/message-sent/"
-
 
 # Build settings
 markdown: kramdown
