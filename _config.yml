@@ -11,6 +11,7 @@ menu:
   - title: About
     url: /about
 email: lydongcanh@gmail.com
+date_format: "%B %d, %Y"
 
 # Social Media Settings
 github_username: lydongcanh
