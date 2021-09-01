@@ -1,5 +1,5 @@
 ---
-date: 2021-08-27 20:46:40
+date: 2021-08-29T20:25:40+07:00
 layout: post
 title: Comparing Redis and Memcached
 subtitle: Select the in-memory data store that meets your needs.

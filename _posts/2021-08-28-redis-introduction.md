@@ -1,7 +1,7 @@
 ---
-date: 2021-08-28 19:36:40
+date: 2021-08-28T19:36:40+07:00
 layout: post
-title: Redis 101
+title: Introduction to Redis
 subtitle: Fast, open source in-memory data store for use as a database, cache, message broker, and queue.
 description: Fast, open source in-memory data store for use as a database, cache, message broker, and queue.
 image: https://res.cloudinary.com/lydongcanh-github-io/image/upload/v1630241388/redis-101-banner_yd9o0m.png
