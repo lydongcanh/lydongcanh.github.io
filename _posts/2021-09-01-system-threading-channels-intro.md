@@ -6,7 +6,6 @@ subtitle: A synchronisation concept which supports passing data between producer
 description: A synchronisation concept which supports passing data between producers and consumers.
 image: https://res.cloudinary.com/lydongcanh-github-io/image/upload/c_scale,h_400,w_800,x_700/v1630507790/system-threading-channels-banner_vknefd.png
 optimized_image: https://res.cloudinary.com/lydongcanh-github-io/image/upload/c_scale,w_380/v1630507790/system-threading-channels-banner_vknefd.png
-two_columns_layout: false
 category: dev
 tags:
   - .net
